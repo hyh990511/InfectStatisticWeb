@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index-style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body>
+
+<div class="loading">
+
+</div>
+
+<div id="wrap">
+
+    <!-- 头部日期选择 -->
+    <div class="bg" id="header">
+        <div class='input-group date' id='datetimepicker1'>
+            <table>
+                <tr style="text-align: center">
+                 
+                    <td>
+                        <p style="width: 130px;">全国疫情数据</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="main">
+
+        <!-- 数字疫情板块 -->
+        <div class="bg" style="margin-top: 15px">
+            <table class="table">
+                <tr>
+                    <td><p class="type-title">现有确诊</p></td>
+                    <td><p class="type-title">现有疑似</p></td>
+                    <td><p class="type-title">现有重症</p></td>
+                </tr>
+                <tr>
+                    <td><p class="count-content" id="definite-count-content">0</p></td>
+                    <td><p class="count-content" id="suspected-count-content">0</p></td>
+                    <td><p class="count-content" id="severe-count-content">0</p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="count-change">昨日</span>
+                        <span class="count-change" id="definite-count-change">0</span>
+                    </td>
+                    <td>
+                        <span class="count-change">昨日</span>
+                        <span class="count-change" id="suspected-count-change">0</span>
+                    </td>
+                    <td>
+                        <span class="count-change">昨日</span>
+                        <span class="count-change" id="severe-count-change">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p class="type-title">累计确诊</p></td>
+                    <td><p class="type-title">累计治愈</p></td>
+                    <td><p class="type-title">累计死亡</p></td>
+                </tr>
+                <tr>
+                    <td><p class="count-content" id="sum-definite-count-content">0</p></td>
+                    <td><p class="count-content" id="sum-cure-count-content">0</p></td>
+                    <td><p class="count-content" id="sum-dead-count-content">0</p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="count-change">昨日</span>
+                        <span class="count-change" id="sum-definite-count-change">0</span>
+                    </td>
+                    <td>
+                        <span class="count-change">昨日</span>
+                        <span class="count-change" id="sum-cure-count-change">0</span>
+                    </td>
+                    <td>
+                        <span class="count-change">昨日</span>
+                        <span class="count-change" id="sum-dead-count-change">0</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 地图疫情板块 -->
+        <div class="bg" style="padding:15px 10px" id="centre">
+            <div>
+                <ul class="nav nav-pills">
+                    <li class="active" id="definite-li"><a href="javascript:void(0)" id="definite-bt" data-toggle="tab">现有确诊</a></li>
+                    <li id="sum-definite-li"><a href="javascript:void(0)" id="sum-definite-bt" data-toggle="tab">累计确诊</a></li>
+                </ul>
+            </div>
+            <div id="china-map">
+            </div>
+        </div>
+
+ 
+
+    <div id="footer">
+        <p>Copyright &copy; 221701207 221701226 All rights reserved</p>
+    </div>
+</div>
+
+</body>
+</html>
