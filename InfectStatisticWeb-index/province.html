@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Province</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index-style.css">
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body>
+
+<div class="loading">
+
+</div>
+
+<div id="wrap">
+
+    <!-- 头部日期选择 -->
+    <div class="bg" id="header">
+        <div class='input-group date' id='datetimepicker1'>
+            <table>
+                <tr style="text-align: center">
+                 
+                    <td>
+                        <p style="width: 260px;">X月XX日XX省疫情数据</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+            </div>
+
+    <!-- 省份数字疫情板块 -->
+            <div class="bg" style="padding: 5px;margin-top: 15px">
+                <table class="table">
+                    <tr>
+                        <td><p class="type-title">现有确诊</p></td>
+                        <td><p class="type-title">现有疑似</p></td>
+                        <td><p class="type-title">累计治愈</p></td>
+                        <td><p class="type-title">累计死亡</p></td>
+                    </tr>
+                    <tr>
+                        <td><p class="count-content" id="province-definite-count-content">0</p></td>
+                        <td><p class="count-content" id="province-suspected-count-content">0</p></td>
+                        <td><p class="count-content" id="province-cure-count-content">0</p></td>
+                        <td><p class="count-content" id="province-dead-count-content">0</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="count-change">昨日</span>
+                            <span class="count-change" id="province-definite-count-change">0</span>
+                        </td>
+                        <td>
+                            <span class="count-change">昨日</span>
+                            <span class="count-change" id="province-suspected-count-change">0</span>
+                        </td>
+                        <td>
+                            <span class="count-change">昨日</span>
+                            <span class="count-change" id="province-care-count-change">0</span>
+                        </td>
+                        <td>
+                            <span class="count-change">昨日</span>
+                            <span class="count-change" id="province-dead-count-change">0</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+        <!-- 图标疫情板块 -->
+        <div class="bg" style="padding: 10px 5px;margin-top: 15px">
+            <div id="chart-line">
+
+            </div>
+            <div>
+   <div id="box" style="width: 1500px; height:800px; background-color: pink;"></div>
+    <script>
+    // 获取到这个DOM节点，然后初始化
+ 
+    var myChart = echarts.init(document.getElementById("box"));
+ 
+    var option = {
+        // 定义样式和数据
+        backgroundColor: '#FBFBFB',
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['现有确诊', '累计确诊','累计治愈','累计死亡']
+        },
+ 
+        calculable: true,
+ 
+ 
+        xAxis: [{
+            axisLabel: {
+                rotate: 30,
+                interval: 0
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'red'
+                }
+            },
+            type: 'category',
+            boundaryGap: false,
+            data: function() {
+                var list = [];
+               for (var i = 0; i < 13; i++) {
+                        list.push('3-' + (1 + i) );
+                    }
+
+          
+                return list;
+            }()
+        }],
+        yAxis: [{
+ 
+            type: 'value',
+            axisLine: {
+                lineStyle: {
+                    color: '#CECECE'
+                }
+            }
+        }],
+        series: [{
+            name: '现有确诊',
+            type: 'line',
+             symbol: 'none',
+             smooth: 0.3,
+             color: ['#66AEDE'],
+            data: [80, 30, 50, 80, 30, 60, 50, 30,80, 30, 60, 50, 30]
+        }, {
+            name: '累计确诊',
+            type: 'line',
+             symbol: 'none',
+             smooth: 0.3,
+             color: ['#90EC7D'],
+            data: [60, 30, 40, 20, 30, 30, 20, 40, 20, 30, 30, 20, 40]
+        },
+	{
+            name: '累计治愈',
+            type: 'line',
+             symbol: 'none',
+             smooth: 0.3,
+             color: ['#FFFF00'],
+            data: [40, 20, 50, 10, 40, 20, 10, 60,10, 40, 20, 10, 60]
+        },
+{
+            name: '累计死亡',
+            type: 'line',
+             symbol: 'none',
+             smooth: 0.3,
+             color: ['#000000'],
+            data: [40, 40, 30, 20, 10, 20, 30, 20, 20, 10, 20, 30, 20,]
+        }]
+    };
+    
+  
+    myChart.setOption(option);
+    </script>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>Copyright &copy; 221701207 221701226 All rights reserved</p>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
+
