@@ -88,7 +88,7 @@
                     <td><p class="type-title">累计死亡</p></td>
                 </tr>
                 <tr>
-                    <td><p class="count-content" id="sum-definite-count-content">0</p></td>
+                    <td><p class="count-content" id="sum-definite-count-content"></p></td>
                     <td><p class="count-content" id="sum-cure-count-content">0</p></td>
                     <td><p class="count-content" id="sum-dead-count-content">0</p></td>
                 </tr>
@@ -158,6 +158,9 @@
 			            {name: '香港', value: randomValue()},
 			            {name: '澳门', value: randomValue()}
 			        ]
+                                                         function jump(){
+                                                                                   window.location.href="province.html";
+                                                         }
 			        var myChart = echarts.init(document.getElementById('china-map'));
 			
 			        function randomValue() {
@@ -171,7 +174,7 @@
 			                },
 			            visualMap: {
 			                min: 0,
-			                max: 5000,
+			                max: 1000,
 			                left: 'left',
 			                top: 'bottom',
 			                text: ['高','低'],//取值范围的文字
