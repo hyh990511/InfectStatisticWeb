@@ -161,7 +161,7 @@
 			        var myChart = echarts.init(document.getElementById('china-map'));
 			
 			        function randomValue() {
-						 return Math.round(Math.random()*10000);
+						 return Math.round(Math.random()*1000);
 			        }
 			        option = {
 			            tooltip: {
@@ -171,7 +171,7 @@
 			                },
 			            visualMap: {
 			                min: 0,
-			                max: 10000,
+			                max: 5000,
 			                left: 'left',
 			                top: 'bottom',
 			                text: ['高','低'],//取值范围的文字
@@ -207,7 +207,7 @@
 			            },
 			            series : [
 			                {
-			                    name: '信息量',
+			                    name: '现有确诊',
 			                    type: 'map',
 			                    geoIndex: 0,
 			                    data:dataList
@@ -223,7 +223,7 @@
 			            myChart.setOption({
 			                series : [
 			                    {
-			                        name: '信息量',
+			                        name: '现有确诊',
 			                        type: 'map',
 			                        geoIndex: 0,
 			                        data:dataList
